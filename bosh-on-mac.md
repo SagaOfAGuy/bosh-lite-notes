@@ -77,3 +77,12 @@ bosh -e vbox -d zookeeper deploy <(wget -O- https://raw.githubusercontent.com/cp
 ```bash
 bosh -e vbox -d zookeeper run-errand smoke-tests
 ```
+
+
+## Deleting Stubborn Aliases / Environments 
+
+The `bosh` config file is located in `~/.config/bosh` folder, so clearing it will clear the cache environments. 
+
+```bash
+echo "" > ~/.config/bosh
+```
