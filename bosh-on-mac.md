@@ -80,9 +80,11 @@ bosh -e vbox -d zookeeper run-errand smoke-tests
 
 
 ## Deleting Stubborn Aliases / Environments 
-
+https://github.com/cloudfoundry/bosh-cli/issues/284
 The `bosh` config file is located in `~/.config/bosh` folder, so clearing it will clear the cache environments. 
 
 ```bash
 echo "" > ~/.config/bosh
 ```
+
+
