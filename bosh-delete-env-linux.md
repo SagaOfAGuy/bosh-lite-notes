@@ -1,0 +1,50 @@
+# Delete Bosh Environment
+
+1. Display all `bosh` environments. Locate environment that you want to delete. 
+```bash
+School@pop-os:~/Documents$ bosh envs
+```
+```bash
+URL           Alias  
+192.168.56.6  vbox  
+
+1 environments
+
+Succeeded
+```
+
+2. Unalias the desired environment
+```bash
+bosh unalias-env $ENVIRONMENT_NAME
+```
+
+3. Check `bosh` environments to confirm unalias:
+```bash
+School@pop-os:~/Documents$ bosh envs
+```
+```bash
+URL  Alias  
+
+0 environments
+
+Succeeded
+```
+
+4. Delete `bosh` environment. Locate the `bosh create-env` command in the bash `history` and replace `bosh create-env` with `bosh delete-env` and the following parameters.
+```bash
+bosh delete-env ~/workspace/bosh-deployment/bosh.yml \
+  --state ./state.json \
+  -o ~/workspace/bosh-deployment/virtualbox/cpi.yml \
+  -o ~/workspace/bosh-deployment/virtualbox/outbound-network.yml \
+  -o ~/workspace/bosh-deployment/bosh-lite.yml \
+  -o ~/workspace/bosh-deployment/bosh-lite-runc.yml \
+  -o ~/workspace/bosh-deployment/uaa.yml \
+  -o ~/workspace/bosh-deployment/credhub.yml \
+  -o ~/workspace/bosh-deployment/jumpbox-user.yml \
+  --vars-store ./creds.yml \
+  -v director_name=$NAME \
+  -v internal_ip=$IP \
+  -v internal_gw=$GATEWAY_IP \
+  -v internal_cidr=$CIDR_IP \
+  -v outbound_network_name=NatNetwork
+```
