@@ -4,7 +4,7 @@ Environment: Ubuntu Linux
 
 Docs: https://bosh.io/docs/bosh-lite/
 
-### Installing CLI V2
+## Installing CLI V2
 Download CLI V2 from: https://github.com/cloudfoundry/bosh-cli/releases
 
 1. Install `bosh` executable
@@ -37,7 +37,7 @@ bosh -v
 sudo apt-get install -y build-essential zlib1g-dev ruby ruby-dev openssl libxslt1-dev libxml2-dev libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3
 ```
 
-### Installing VirtualBox
+## Installing VirtualBox
 1. VirtualBox Install
 
 ```bash
