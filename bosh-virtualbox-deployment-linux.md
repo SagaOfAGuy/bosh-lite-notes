@@ -70,3 +70,17 @@ bosh -e $ENVIRONMENT_NAME env
 ```bash
 sudo ip route add   10.244.0.0/16 via 192.168.56.6
 ```
+
+## Connect via SSH
+1. Enable SSH connection via these commands. Note that `$IP` is the IP address set when creating the bosh environment. 
+```bash
+bosh int creds.yml --path /jumpbox_ssh/private_key > jumpbox.key
+chmod 600 jumpbox.key
+ssh jumpbox@$IP -i jumpbox.key
+```
+
+2. SSH into director
+
+```bash
+ssh jumpbox@$IP
+```
