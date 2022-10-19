@@ -1,4 +1,4 @@
-## BOSH Lite v2 installation
+# BOSH Lite v2 installation
 
 Environment: Ubuntu Linux
 
