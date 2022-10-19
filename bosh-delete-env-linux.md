@@ -48,3 +48,13 @@ bosh delete-env ~/workspace/bosh-deployment/bosh.yml \
   -v internal_cidr=$CIDR_IP \
   -v outbound_network_name=NatNetwork
 ```
+
+**NOTE:** If Network route still exists, check network route, and unassign the route. 
+```bash
+route -n
+```
+
+Delete route: 
+```bash
+sudo route del -net $DESTINATION gw $GATEWAY netmask $NETMASK dev $INTERFACE
+```
