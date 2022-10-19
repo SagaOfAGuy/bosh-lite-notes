@@ -52,3 +52,25 @@ bosh create-env ~/workspace/bosh-deployment/bosh.yml \
   -v internal_cidr=$CIDR_IP \
   -v outbound_network_name=NatNetwork
 ```
+7. Create username and password for test environment
+
+```bash
+export BOSH_CLIENT=admin
+export BOSH_CLIENT_SECRET=`bosh int ./creds.yml --path /admin_password`
+```
+
+8. Create alias (shorthand name) for created environment. Replace `$IP` with desired IP Address. Ideally should be `$IP` from the `create-env` command. Replace `$ENVIRONMENT_NAME` with desired environment name. 
+
+```bash
+bosh alias-env $ENVIRONMENT_NAME -e $IP --ca-cert <(bosh int ./creds.yml --path /director_ssl/ca)
+```
+
+9. Confirm that environment has been registered within `bosh`. Replace `$ENVIRONMENT_NAME` with desired environment name. 
+
+```bash
+bosh -e $ENVIRONMENT_NAME env
+```
+10. Setup local network route to access VM locally
+```bash
+sudo ip route add   10.244.0.0/16 via 192.168.56.6
+```
