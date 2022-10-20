@@ -48,7 +48,7 @@ bosh create-env ~/workspace/bosh-deployment/bosh.yml \
   -v internal_cidr=192.168.56.0/24 \
   -v outbound_network_name=NatNetwork
 ```
-NOTE: Sometimes, there's an error where Virtualbox cannnot create the Network Adapter for Ubuntu machines. Solution is posted here: https://stackoverflow.com/questions/69722254/vagrant-up-failing-for-virtualbox-provider-with-e-accessdenied-on-host-only-netw
+**NOTE:** Sometimes, there's an error where Virtualbox cannnot create the Network Adapter for Ubuntu machines. Solution is posted here: https://stackoverflow.com/questions/69722254/vagrant-up-failing-for-virtualbox-provider-with-e-accessdenied-on-host-only-netw
 
 6. Create username and password for test environment
 
