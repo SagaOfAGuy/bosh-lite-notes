@@ -2,7 +2,7 @@
 
 1. Upload appropriate stemcell (Trusty) to `bosh` director
 ```bash
-bosh upload-stemcell --sha1 2234c87513356e2f038ab993ef508b8724893683 \
+bosh -e $ENVIRONMENT_NAME upload-stemcell --sha1 2234c87513356e2f038ab993ef508b8724893683 \
 https://bosh.io/d/stemcells/bosh-warden-boshlite-ubuntu-trusty-go_agent?v=3586.100
 ```
 
