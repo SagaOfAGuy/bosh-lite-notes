@@ -1,5 +1,6 @@
 # Deploy Nginx on Bosh
 
+## Nginx Deployment
 1. Upload appropriate stemcell (Trusty) to `bosh` director
 ```bash
 bosh -e $ENVIRONMENT_NAME upload-stemcell --sha1 19355b8bece54930f78077290b7c1562ef45c1ee \
@@ -31,3 +32,7 @@ bosh -e $NAME -d nginx deploy manifests/nginx-lite.yml
 ```bash
 sudo ip route add 10.244.0.0/24 via 192.168.56.6
 ```
+
+## Scaling
+Scaling can be down by editing the `nginx-lite.yml` file. You can add extra instances, etc. Additionally, you would be able to use the `cloud-config.yml` found in the `~/workspace/bosh-deployment/virtualbox`folder to assign more diskpace, RAM, etc to the bosh director. 
+
