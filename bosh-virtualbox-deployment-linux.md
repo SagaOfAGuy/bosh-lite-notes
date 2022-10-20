@@ -29,7 +29,7 @@ git clone https://github.com/cloudfoundry/bosh-deployment ~/workspace/bosh-deplo
 mkdir -p ~/deployments/vbox && cd ~/deployments/vbox
 ```
 ## Test Environment Creation
-5. Create a `bosh` VirtualBox environment. Replace `$IP`,`$GATEWAY_IP` and `$CIDR_IP` with desired IP addresses, and `$NAME` with desired environment name
+5. Create a `bosh` VirtualBox environment. Replace `$NAME` with a name of the desired director environment name
 
 ```bash
 bosh create-env ~/workspace/bosh-deployment/bosh.yml \
@@ -43,9 +43,9 @@ bosh create-env ~/workspace/bosh-deployment/bosh.yml \
   -o ~/workspace/bosh-deployment/jumpbox-user.yml \
   --vars-store ./creds.yml \
   -v director_name=$NAME \
-  -v internal_ip=$IP \
-  -v internal_gw=$GATEWAY_IP \
-  -v internal_cidr=$CIDR_IP \
+  -v internal_ip=192.168.56.6 \
+  -v internal_gw=192.168.56.1 \
+  -v internal_cidr=192.168.56.0/24 \
   -v outbound_network_name=NatNetwork
 ```
 6. Create username and password for test environment
