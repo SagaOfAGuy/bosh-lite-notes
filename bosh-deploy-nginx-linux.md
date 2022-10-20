@@ -1,5 +1,5 @@
 # Deploy Nginx on Bosh
-
+https://github.com/cloudfoundry-community/nginx-release
 ## Nginx Deployment
 1. Upload appropriate stemcell (Trusty) to `bosh` director
 ```bash
