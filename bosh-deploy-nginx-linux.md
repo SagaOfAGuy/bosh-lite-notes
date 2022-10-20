@@ -29,5 +29,5 @@ bosh -e $NAME -d nginx deploy manifests/nginx-lite.yml
 5. Add route to make nginx accessible locally
 
 ```bash
-sudo route -n add 10.244.0.0/24 192.168.56.6
+sudo ip route add 10.244.0.0/24 via 192.168.56.6
 ```
