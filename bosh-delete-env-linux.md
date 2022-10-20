@@ -1,3 +1,9 @@
+# Delete Bosh deployment
+```bash
+bosh -d $DEPLOYMENT_NAME delete-deployment
+```
+
+
 # Delete Bosh Environment
 
 1. Display all `bosh` environments. Locate environment that you want to delete. 
@@ -58,9 +64,4 @@ route -n
 Delete route: 
 ```bash
 sudo route del -net $DESTINATION gw $GATEWAY netmask $NETMASK dev $INTERFACE
-```
-
-# Delete Bosh deployment
-```bash
-bosh -d $DEPLOYMENT_NAME delete-deployment
 ```
