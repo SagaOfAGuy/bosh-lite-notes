@@ -43,9 +43,9 @@ bosh delete-env ~/workspace/bosh-deployment/bosh.yml \
   -o ~/workspace/bosh-deployment/jumpbox-user.yml \
   --vars-store ./creds.yml \
   -v director_name=$NAME \
-  -v internal_ip=$IP \
-  -v internal_gw=$GATEWAY_IP \
-  -v internal_cidr=$CIDR_IP \
+  -v internal_ip=192.168.56.6 \
+  -v internal_gw=192.168.56.1 \
+  -v internal_cidr=192.168.56.0/24 \
   -v outbound_network_name=NatNetwork
 ```
 
