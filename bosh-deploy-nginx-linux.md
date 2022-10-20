@@ -1,5 +1,8 @@
 # Deploy Nginx on Bosh
 https://github.com/cloudfoundry-community/nginx-release
+
+Spring-Music on Bosh-Lite: https://medium.com/@ravijagannathan/install-cloud-foundry-on-bosh-lite-6d3b9a1e416a
+
 ## Nginx Deployment
 1. Upload appropriate stemcell (Bionic) to `bosh` director
 ```bash
