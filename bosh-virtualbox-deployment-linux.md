@@ -99,5 +99,5 @@ echo "" > ~/.bosh/config
 
 Clearing config folders
 ```bash
-rm -rf ~/.bosh/downloads/* ~/.bosh/installation/* ~/.bosh/tmp/* ~/.bosh/cache/*
+rm -rf ~/.bosh* 
 ```
