@@ -76,6 +76,8 @@ sudo ip route add 10.244.0.0/16 via 192.168.56.6
 bosh -e $NAME update-cloud-config ~/workspace/bosh-deployment/warden/cloud-config.yml
 ```
 
+## Upload Stemcell Virtual Machine
+
 11. Upload stemcell. In this case, we will use Ubuntu Xenial. 
 ```bash
 bosh -e $NAME upload-stemcell \
@@ -84,7 +86,7 @@ bosh -e $NAME upload-stemcell \
 ```
 
 
-## Connect via SSH
+## Connect via SSH (Not Recommended)
 1. Enable SSH connection via these commands. Note that `$IP` is the IP address set when creating the bosh environment. 
 ```bash
 bosh int creds.yml --path /jumpbox_ssh/private_key > jumpbox.key
