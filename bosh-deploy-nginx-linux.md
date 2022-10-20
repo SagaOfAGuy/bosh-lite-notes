@@ -2,8 +2,8 @@
 
 1. Upload appropriate stemcell (Trusty) to `bosh` director
 ```bash
-bosh -e $ENVIRONMENT_NAME upload-stemcell --sha1 2234c87513356e2f038ab993ef508b8724893683 \
-https://bosh.io/d/stemcells/bosh-warden-boshlite-ubuntu-trusty-go_agent?v=3586.100
+bosh -e $ENVIRONMENT_NAME upload-stemcell --sha1 19355b8bece54930f78077290b7c1562ef45c1ee \
+  https://bosh.io/d/stemcells/bosh-warden-boshlite-ubuntu-bionic-go_agent?v=1.115
 ```
 
 2. Clone `nginx` release repository and `cd` into it
