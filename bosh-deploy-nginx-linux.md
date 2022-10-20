@@ -1,7 +1,7 @@
 # Deploy Nginx on Bosh
 https://github.com/cloudfoundry-community/nginx-release
 ## Nginx Deployment
-1. Upload appropriate stemcell (Trusty) to `bosh` director
+1. Upload appropriate stemcell (Bionic) to `bosh` director
 ```bash
 bosh -e $ENVIRONMENT_NAME upload-stemcell --sha1 19355b8bece54930f78077290b7c1562ef45c1ee \
   https://bosh.io/d/stemcells/bosh-warden-boshlite-ubuntu-bionic-go_agent?v=1.115
