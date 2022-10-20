@@ -58,3 +58,8 @@ Delete route:
 ```bash
 sudo route del -net $DESTINATION gw $GATEWAY netmask $NETMASK dev $INTERFACE
 ```
+
+# Delete Bosh deployment
+```bash
+bosh -d $DEPLOYMENT_NAME delete-deployment
+```
