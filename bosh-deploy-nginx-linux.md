@@ -13,8 +13,14 @@ cd ~/workspace
 git clone https://github.com/cloudfoundry-community/nginx-release.git
 cd nginx-release
 ```
+3. Upload nginx release
 
-3. Deploy Nginx on stemcell
+```bash
+bosh -e vbox ur https://github.com/cloudfoundry-community/nginx-release/releases/download/1.21.6/nginx-release-1.21.6.tgz
+
+```
+
+4. Deploy Nginx on stemcell
 
 ```bash
 bosh -e $NAME -d nginx deploy manifests/nginx-lite.yml
