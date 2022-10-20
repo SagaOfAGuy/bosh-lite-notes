@@ -32,6 +32,7 @@ Succeeded
 
 4. Delete `bosh` environment. Locate the `bosh create-env` command in the bash `history` and replace `bosh create-env` with `bosh delete-env` and the following parameters.
 ```bash
+cd ~/deployments/vbox && 
 bosh delete-env ~/workspace/bosh-deployment/bosh.yml \
   --state ./state.json \
   -o ~/workspace/bosh-deployment/virtualbox/cpi.yml \
