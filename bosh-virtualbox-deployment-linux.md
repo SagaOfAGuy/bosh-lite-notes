@@ -76,13 +76,12 @@ sudo ip route add 10.244.0.0/16 via 192.168.56.6
 bosh -e $NAME update-cloud-config ~/workspace/bosh-deployment/warden/cloud-config.yml
 ```
 
-## Upload Stemcell Virtual Machine
+## Upload Stemcell Virtual Machine (Trusty)
 
 11. Upload stemcell. In this case, we will use Ubuntu Xenial. 
 ```bash
-bosh -e $NAME upload-stemcell \
-  https://bosh.io/d/stemcells/bosh-warden-boshlite-ubuntu-xenial-go_agent?v=315.45 \
-  --sha1 674cd3c1e64d8c51e62770697a63c07ca04e9bbd
+bosh upload-stemcell --sha1 2234c87513356e2f038ab993ef508b8724893683 \
+  https://bosh.io/d/stemcells/bosh-warden-boshlite-ubuntu-trusty-go_agent?v=3586.100
 ```
 
 
