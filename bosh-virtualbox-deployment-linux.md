@@ -90,3 +90,14 @@ ssh jumpbox@$IP -i jumpbox.key
 ```bash
 ssh jumpbox@$IP
 ```
+
+## Troubleshoot Stubborn Installations
+Clearing config file:
+```bash
+echo "" > ~/.bosh/config
+```
+
+Clearing config folders
+```bash
+rm -rf ~/.bosh/downloads/* ~/.bosh/installation/* ~/.bosh/tmp/* ~/.bosh/cache/*
+```
