@@ -18,18 +18,18 @@ VBoxManage --version
 ## Workspace Creation
 
 
-3. Clone bosh deployment folder to local `~/workspace/deployment` folder which will be the master workspace deployment folder that houses files needed to create our test deployment environment.
+1. Clone bosh deployment folder to local `~/workspace/deployment` folder which will be the master workspace deployment folder that houses files needed to create our test deployment environment.
 
 ```bash
 git clone https://github.com/cloudfoundry/bosh-deployment ~/workspace/bosh-deployment
 ```
 
-4. Create a separate local deployment folder for our VirtualBox test deployment and `cd` to this folder
+2. Create a separate local deployment folder for our VirtualBox test deployment and `cd` to this folder
 ```bash
 mkdir -p ~/deployments/vbox && cd ~/deployments/vbox
 ```
 ## Test Environment Creation
-5. Create a `bosh` VirtualBox environment. Replace `$NAME` with a name of the desired director environment name
+3. Create a `bosh` VirtualBox environment. Replace `$NAME` with a name of the desired director environment name
 
 ```bash
 bosh create-env ~/workspace/bosh-deployment/bosh.yml \
@@ -50,30 +50,26 @@ bosh create-env ~/workspace/bosh-deployment/bosh.yml \
 ```
 **NOTE:** Sometimes, there's an error where Virtualbox cannnot create the Network Adapter for Ubuntu machines. Solution is posted here: https://stackoverflow.com/questions/69722254/vagrant-up-failing-for-virtualbox-provider-with-e-accessdenied-on-host-only-netw
 
-6. Create username and password for test environment
+4. Create username and password for test environment
 
 ```bash
 export BOSH_CLIENT=admin
 export BOSH_CLIENT_SECRET=`bosh int ./creds.yml --path /admin_password`
 ```
 
-7. Create alias (shorthand name) for created environment. Replace `$IP` with desired IP Address. Ideally should be `$IP` from the `create-env` command. Replace `$ENVIRONMENT_NAME` with desired environment name. 
+5. Create alias (shorthand name) for created environment. Replace `$IP` with desired IP Address. Ideally should be `$IP` from the `create-env` command. Replace `$ENVIRONMENT_NAME` with desired environment name. 
 
 ```bash
 bosh alias-env $ENVIRONMENT_NAME -e $IP --ca-cert <(bosh int ./creds.yml --path /director_ssl/ca)
 ```
 
-8. Confirm that environment has been registered within `bosh`. Replace `$ENVIRONMENT_NAME` with desired environment name. 
+6. Confirm that environment has been registered within `bosh`. Replace `$ENVIRONMENT_NAME` with desired environment name. 
 
 ```bash
 bosh -e $ENVIRONMENT_NAME env
 ```
-9. Setup local network route to access VM locally
-```bash
-sudo ip route add 10.244.0.0/16 via 192.168.56.6
-```
 
-10. Update cloud configuration file
+7. Update cloud configuration file
 ```bash
 bosh -e $NAME update-cloud-config ~/workspace/bosh-deployment/warden/cloud-config.yml
 ```
