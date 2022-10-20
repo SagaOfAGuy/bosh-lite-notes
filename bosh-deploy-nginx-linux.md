@@ -36,3 +36,5 @@ sudo ip route add 10.244.0.0/24 via 192.168.56.6
 ## Scaling
 Scaling can be down by editing the `nginx-lite.yml` file. You can add extra instances, etc. Additionally, you would be able to use the `cloud-config.yml` found in the `~/workspace/bosh-deployment/virtualbox`folder to assign more diskpace, RAM, etc to the bosh director. 
 
+NOTE: In the `nginx-lite.yml` file, get rid of the `static ip` parameter and save `nginx-lite.yml` file.
+
