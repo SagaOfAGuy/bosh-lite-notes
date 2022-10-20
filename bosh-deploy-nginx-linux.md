@@ -26,4 +26,8 @@ bosh -e vbox ur https://github.com/cloudfoundry-community/nginx-release/releases
 bosh -e $NAME -d nginx deploy manifests/nginx-lite.yml
 ```
 
+5. Add route to make nginx accessible locally
 
+```bash
+sudo route -n add 10.244.0.0/24 192.168.56.6
+```
