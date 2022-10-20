@@ -60,7 +60,7 @@ export BOSH_CLIENT_SECRET=`bosh int ./creds.yml --path /admin_password`
 5. Create alias (shorthand name) for created environment. Replace `$IP` with desired IP Address. Ideally should be `$IP` from the `create-env` command. Replace `$ENVIRONMENT_NAME` with desired environment name. 
 
 ```bash
-bosh alias-env $ENVIRONMENT_NAME -e $IP --ca-cert <(bosh int ./creds.yml --path /director_ssl/ca)
+bosh alias-env $ENVIRONMENT_NAME -e 192.168.56.6 --ca-cert <(bosh int ./creds.yml --path /director_ssl/ca)
 ```
 
 6. Confirm that environment has been registered within `bosh`. Replace `$ENVIRONMENT_NAME` with desired environment name. 
