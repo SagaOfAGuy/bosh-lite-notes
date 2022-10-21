@@ -22,7 +22,7 @@ sha256sum bosh-cli-7.0.1-linux-amd64
 3. Rename, add executable permissions and move executable to bin folder
 
 ```bash
-chmod bosh-cli-7.0.1-linux-amd64 && sudo mv bosh-cli-7.0.1-linux-amd64 bosh && sudo mv bosh /usr/bin
+chmod +x bosh-cli-7.0.1-linux-amd64 && sudo mv bosh-cli-7.0.1-linux-amd64 bosh && sudo mv bosh /usr/bin
 ```
 
 4. Verify `bosh` version number
