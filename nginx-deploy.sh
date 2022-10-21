@@ -34,7 +34,7 @@ bosh alias-env test-env -e 192.168.56.6 --ca-cert <(bosh int ./creds.yml --path 
 bosh -e test-env env
 
 # Update cloud config file
-bosh -e $NAME update-cloud-config ~/workspace/bosh-deployment/warden/cloud-config.yml
+bosh -e test-env update-cloud-config ~/workspace/bosh-deployment/warden/cloud-config.yml
 
 # Upload stemcell to test environment
 bosh -e test-env upload-stemcell --sha1 19355b8bece54930f78077290b7c1562ef45c1ee \
