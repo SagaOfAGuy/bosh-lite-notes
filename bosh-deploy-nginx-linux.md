@@ -5,6 +5,8 @@ Deploying Cloudfoundry on Bosh-Lite: https://docs.cloudfoundry.org/deploying/cf-
 
 Spring-Music on Bosh-Lite: https://medium.com/@ravijagannathan/install-cloud-foundry-on-bosh-lite-6d3b9a1e416a
 
+Cloud foundry on bosh-lite: https://fabianlee.org/2018/03/08/cloudfoundry-deploy-cloud-foundry-locally-using-bosh-lite-on-ubuntu/
+
 ## Nginx Deployment
 1. Upload appropriate stemcell (Bionic) to `bosh` director
 ```bash
