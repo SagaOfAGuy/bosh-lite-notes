@@ -46,5 +46,5 @@ sudo apt install virtualbox virtualbox-ext-pack
 
 2. Verify Virtualbox Version
 ```bash
-VBoxmanage --version
+VBoxManage --version
 ```
